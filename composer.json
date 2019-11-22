@@ -1,0 +1,27 @@
+{
+    "name": "JVitor22/Gerenciador_de_clientes",
+    "description": "Projeto ao qual implementa uma ferramenta voltada ao vendedor cujo objetivo é facilitar o gerenciamento dos seus clientes e vendas.",
+    "minimum-stability": "stable",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Joao Vitor de Faria",
+            "email": "jvfaria015@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "config": {
+        "vendor-dir": "vendor"
+    },
+    "autoload": {
+        "psr-4": {
+            "Source\\": "source/"
+        },
+        "files": [
+            "source/Config.php"
+        ]
+    },
+    "require": {
+        "phpmailer/phpmailer": "6.0.*"
+    }
+}
