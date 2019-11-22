@@ -1,6 +1,6 @@
 <?php
 
-abstract class Clientes{
+abstract class Cliente{
     protected $codigo;
     protected $nome;
     protected $endereco;
