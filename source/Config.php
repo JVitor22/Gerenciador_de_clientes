@@ -1,16 +1,27 @@
 <?php
-define("DATA LAYER CONFIG",[
-    "driver" => "mysql",
-    "host" => "localhost",
-    "port" => "3306",
-    "dbname" => "manager",
-    "username" => "root",
-    "password" => "123",
-    "options" => [
-        PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8",
-        PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-        PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_OBJ,
-        PDO::ATTR_CASE => PDO::CASE_NATURAL
-    ]
-
-]);
+require __DIR__.'/../vendor/autoload.php';
+define('DB_NAME','manager');
+define('DB_HOST', 'localhost'); 
+define('DB_USER','root'); 
+define('DB_PASS',''); 
+define("URL_BASE","https://www.localhost/Projetos_PHP/Gerenciador_de_clientes");
+class Connection {
+	private static $instance;
+	public static function getInstance(){
+		if(!isset(self::$instance)){
+			try {
+				self::$instance = new PDO('mysql:host=' . DB_HOST . ';dbname=' . DB_NAME.';charset=utf8', DB_USER, DB_PASS);
+				self::$instance->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+				self::$instance->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
+				
+			} catch (PDOException $e) {
+				echo $e->getMessage();
+			}
+		}
+		return self::$instance;
+	}
+ 	
+	public static function prepare($sql){
+		return self::getInstance()->prepare($sql);
+	}
+}

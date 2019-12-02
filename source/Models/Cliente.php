@@ -112,14 +112,14 @@ abstract class Cliente{
     }
     // RETORNA NUMERO DE CLIENTES 
     public function numClientes(){
-        $query = ("SELECT cliente.id_cliente FROM cliente");
+        $query = ("SELECT clientes.id_cliente FROM clientes");
         $conn = Connection::prepare($query);
         $conn->execute();
         return $conn->rowCount();
     }
 
     public function findAll(){
-        $query = ("SELECT * FROM cliente ");
+        $query = ("SELECT * FROM clientes ");
         $conn = Connection::prepare($query);
         $conn->execute();
         return $conn->fetchAll();
