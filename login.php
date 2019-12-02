@@ -15,7 +15,8 @@ $password = $_POST['senha'];
         .href='index.php';</script>";
         die();
       }else{
-        setcookie("email",$email);
-        header("Location:home.php");
+        $result = $verifica->fetch(PDO::FETCH_ASSOC);
+        setcookie('nome', $result["nome_usuario"]);
+        header("Location:FRONTEND/home.php");
       }
   }

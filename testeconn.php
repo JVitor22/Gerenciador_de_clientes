@@ -1,11 +1,9 @@
 <?php
+
+use Source\Control\ControlCliente;
+
 require __DIR__.'/vendor/autoload.php';
-use CoffeCode\DataLayer\Connect;
 
-$conn = Connect::getInstance();
-$error = Connect::getError();
-
-if($error){
-    echo $error->getMessage();
-    die();
-}
+$c = new ControlCliente();
+$sql = $c->findAll();
+print_r(json_encode($sql));

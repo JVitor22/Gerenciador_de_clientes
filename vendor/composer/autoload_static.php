@@ -7,6 +7,7 @@ namespace Composer\Autoload;
 class ComposerStaticInitb5056a4c7dea1913255e4527a11a2edf
 {
     public static $files = array (
+        '253c157292f75eb38082b5acb06f3f01' => __DIR__ . '/..' . '/nikic/fast-route/src/functions.php',
         'dc421cab201be21f50725057f279b84b' => __DIR__ . '/../..' . '/source/Config.php',
     );
 
@@ -14,10 +15,16 @@ class ComposerStaticInitb5056a4c7dea1913255e4527a11a2edf
         'S' => 
         array (
             'Source\\' => 7,
+            'Slim\\' => 5,
         ),
         'P' => 
         array (
-            'PHPMailer\\PHPMailer\\' => 20,
+            'Psr\\Http\\Message\\' => 17,
+            'Psr\\Container\\' => 14,
+        ),
+        'F' => 
+        array (
+            'FastRoute\\' => 10,
         ),
     );
 
@@ -26,9 +33,31 @@ class ComposerStaticInitb5056a4c7dea1913255e4527a11a2edf
         array (
             0 => __DIR__ . '/../..' . '/source',
         ),
-        'PHPMailer\\PHPMailer\\' => 
+        'Slim\\' => 
         array (
-            0 => __DIR__ . '/..' . '/phpmailer/phpmailer/src',
+            0 => __DIR__ . '/..' . '/slim/slim/Slim',
+        ),
+        'Psr\\Http\\Message\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/psr/http-message/src',
+        ),
+        'Psr\\Container\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/psr/container/src',
+        ),
+        'FastRoute\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/nikic/fast-route/src',
+        ),
+    );
+
+    public static $prefixesPsr0 = array (
+        'P' => 
+        array (
+            'Pimple' => 
+            array (
+                0 => __DIR__ . '/..' . '/pimple/pimple/src',
+            ),
         ),
     );
 
@@ -37,6 +66,7 @@ class ComposerStaticInitb5056a4c7dea1913255e4527a11a2edf
         return \Closure::bind(function () use ($loader) {
             $loader->prefixLengthsPsr4 = ComposerStaticInitb5056a4c7dea1913255e4527a11a2edf::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInitb5056a4c7dea1913255e4527a11a2edf::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInitb5056a4c7dea1913255e4527a11a2edf::$prefixesPsr0;
 
         }, null, ClassLoader::class);
     }

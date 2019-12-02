@@ -7,5 +7,8 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Source\\' => array($baseDir . '/source'),
-    'PHPMailer\\PHPMailer\\' => array($vendorDir . '/phpmailer/phpmailer/src'),
+    'Slim\\' => array($vendorDir . '/slim/slim/Slim'),
+    'Psr\\Http\\Message\\' => array($vendorDir . '/psr/http-message/src'),
+    'Psr\\Container\\' => array($vendorDir . '/psr/container/src'),
+    'FastRoute\\' => array($vendorDir . '/nikic/fast-route/src'),
 );
