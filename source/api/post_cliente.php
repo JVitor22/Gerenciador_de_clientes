@@ -1,17 +1,17 @@
 <?php
 use Source\Control\ControlCliente;
-
-include __DIR__.'/../control/ControlCliente.php';
+require __DIR__.'/../../vendor/autoload.php';
  
 header('Content-type: application/json');
 $data = file_get_contents('php://input');
 $obj =  json_decode($data);
+
 if(!empty($data)){	
+	
 	try {
  		$clienteControl= new ControlCliente();
- 		$answer = $clienteControl->insert($obj);
+ 		$clienteControl->insert($obj);
  		http_response_code(200);
- 		$obj->id = $answer;
  		echo json_encode($obj);
  	}
  	catch (PDOException $e) {

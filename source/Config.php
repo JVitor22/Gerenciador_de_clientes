@@ -24,4 +24,8 @@ class Connection {
 	public static function prepare($sql){
 		return self::getInstance()->prepare($sql);
 	}
+
+	public static function lastId() {
+		return self::getInstance()->lastInsertId();
+	}
 }

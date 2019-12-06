@@ -34,4 +34,16 @@ class ControlCliente
     {
         return Cliente::findAll();
     }
+    public function findInatives(){
+        return Cliente::findInatives();
+
+    }
+    public function numberClients(){
+        return Cliente::numberClients();
+
+    }
+    public function numberInatives(){
+        return Cliente::numberInatives();
+
+    }
 }
